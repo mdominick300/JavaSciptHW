@@ -1,0 +1,70 @@
+body{
+    background: #F5F5F5;
+}
+
+h1{
+    text-align: center;
+}
+
+.whitebox {
+    position: relative;
+    background:white;
+    float: left;
+    clear: both;  
+    padding: 40px;
+    height:auto;
+    margin: 40px 0 40px 0;
+    border-color: #777777;
+    width: 100%;
+    border: solid 1px;
+    border-color: grey;
+}
+
+.output {
+    position: relative;
+    float: left;
+    padding: 40px;
+    height: 170px;
+    margin: 10px 0 10px 0;
+    border-color: #777777;
+    width: 100%;
+    border: dashed 2px;
+    border-color: grey;
+    text-align: center;
+    vertical-align: top;
+}
+
+.line {
+    position: relative;
+    float: left;
+    border: solid 1px;
+    margin-top: 20px;
+    width: 100%;
+    color: lightgrey;
+}
+
+.line2 {
+    position: relative;
+    float: left;
+    border: solid 1px;
+    margin-bottom: 20px;
+    width: 100%;
+    color: lightgrey;
+}
+
+.redbutton {
+    background: darkred;
+    font-size: 150%;
+    color: white;
+    padding: 10px 30px 10px 30px;
+    border-radius: 40px;
+
+}
+
+.greybutton {
+    background: grey;
+    font-size: 150%;
+    color: white;
+    padding: 10px 30px 10px 30px;
+    border-radius: 40px;
+}
