@@ -34,7 +34,7 @@
             <span class="line2"></span>
             <div class="row justify-content-between">
                 <span class="col-xs-4">
-                    <button onclick="myFunction()"class="redbutton ">Generate Password</button>
+                    <button onclick="myFunction()" class="redbutton ">Generate Password</button>
                 </span>
                 <span class="col-xs-4">
                     <button onclick="myFunction()" class="greybutton"> Copy to Clipboard</button>
@@ -45,19 +45,44 @@
         </div>
     </div>
     <script>
-        var letters = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z" ];
-        var special = ["!","@","#","$","%","^","&"];
-
-        var characters = prompt("How many characters do you want your Password to be?\nSelect 6-18");
-
-
-
-        
+        var numberChars = ["0","1","2","3","4","5","6","7","8","9"];
+        var upperChars = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
+        var lowerChars = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+        var specialChars = ["!","@","#","$","%","^","&"];
 
 
+        var selectChars = 0;
+            
+            while (selectChars < 8 || selectChars > 128 ) {
+                selectChars = prompt("How many characters do you want your Password to be?\nMust select 8-128");
 
+                    console.log(selectChars);
+            }
+           var selectNumChars = confirm("Would you like to use numbers?");
+            console.log(selectNumChars);
 
+            var selectLowChars = confirm("Would you like to use lower case characters?");
+            console.log(selectLowChars);
 
+             var selectUpChars = confirm("Would you like to use upper case characters?");
+            console.log(selectUpChars);
+
+            var selectSpecChars = confirm("Would you like to use special characters?")
+            console.log(selectSpecChars);
+
+            if ( selectNumChars)
+
+        var fullArray = numberChars.concat(upperChars,lowerChars,specialChars);
+
+        // function generatePassword() {
+
+        for (var i = 0; i < selectChars; i++) {
+            var rand = fullArray[Math.floor(Math.random() * fullArray.length)];
+        console.log(rand);
+        }
+    
+
+      
 
     </script>
 
