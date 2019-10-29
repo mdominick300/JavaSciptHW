@@ -34,7 +34,7 @@
             <span class="line2"></span>
             <div class="row justify-content-between">
                 <span class="col-xs-4">
-                    <button onclick="myFunction()" class="redbutton ">Generate Password</button>
+                    <button onclick="generatePassword()" id="bgnBtn" class="redbutton ">Generate Password</button>
                 </span>
                 <span class="col-xs-4">
                     <button onclick="myFunction()" class="greybutton"> Copy to Clipboard</button>
@@ -52,6 +52,7 @@
 
         var selectChars = 0;
             
+            function generatePassword() {
             while (selectChars < 8 || selectChars > 128 ) {
                 selectChars = prompt("How many characters do you want your Password to be?\nMust select 8-128");
 
@@ -69,9 +70,9 @@
             var selectSpecChars = confirm("Would you like to use special characters?")
             console.log(selectSpecChars);
             
-
             }
-
+            
+    
             if ( selectNumChars == false){
                 numberChars = "";
             }
@@ -87,19 +88,14 @@
 
         var fullArray = numberChars.concat(upperChars,lowerChars,specialChars);
 
-        // function generatePassword() {
-
         for (var i = 0; i < selectChars; i++) {
             var rand = fullArray[Math.floor(Math.random() * fullArray.length)];
         console.log(rand);
         }
+            }
+        // var password = rand.join('')+'.';
+        // console.log(password);
 
-        var password = rand.join('')+'.';
-        console.log(password);
-       
-       
-
-      
 
     </script>
 
