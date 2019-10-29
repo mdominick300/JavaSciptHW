@@ -50,14 +50,13 @@
         var lowerChars = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
         var specialChars = ["!","@","#","$","%","^","&"];
 
-
         var selectChars = 0;
             
             while (selectChars < 8 || selectChars > 128 ) {
                 selectChars = prompt("How many characters do you want your Password to be?\nMust select 8-128");
 
                     console.log(selectChars);
-            }
+            
            var selectNumChars = confirm("Would you like to use numbers?");
             console.log(selectNumChars);
 
@@ -69,8 +68,22 @@
 
             var selectSpecChars = confirm("Would you like to use special characters?")
             console.log(selectSpecChars);
+            
 
-            if ( selectNumChars)
+            }
+
+            if ( selectNumChars == false){
+                numberChars = "";
+            }
+            if ( selectLowChars == false){
+                lowerChars = "";
+            }
+            if (selectUpChars == false){
+                upperChars = "";
+            }
+            if (selectSpecChars == false){
+                specialChars = "";
+            }
 
         var fullArray = numberChars.concat(upperChars,lowerChars,specialChars);
 
@@ -80,7 +93,11 @@
             var rand = fullArray[Math.floor(Math.random() * fullArray.length)];
         console.log(rand);
         }
-    
+
+        var password = rand.join('')+'.';
+        console.log(password);
+       
+       
 
       
 
