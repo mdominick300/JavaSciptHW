@@ -45,56 +45,75 @@
         </div>
     </div>
     <script>
-        var numberChars = ["0","1","2","3","4","5","6","7","8","9"];
-        var upperChars = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
-        var lowerChars = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
-        var specialChars = ["!","@","#","$","%","^","&"];
 
-        var selectChars = 0;
-            
-            function generatePassword() {
-            while (selectChars < 8 || selectChars > 128 ) {
+        var numberChars = "0123456789";
+        var upperChars = "Abcdefghijklmnopqrstuvwxyz";
+        var lowerChars = "abcdefghijklmnopqrstuvwxyz";
+        var specialChars = "!@#$%^&*[]?><";
+        var random = "";
+        var selectNumChars ;
+
+        var selectChars = 0 ;
+
+        function generatePassword() {
+            while (selectChars < 8 || selectChars > 128) {
                 selectChars = prompt("How many characters do you want your Password to be?\nMust select 8-128");
 
-                    console.log(selectChars);
+                console.log(selectChars);
+            }
+
+            var selectInvalid = true;
+
+            while ((selectChars > 7 && selectChars < 129) && selectInvalid === true) {
+                var selectNumChars = confirm("Would you like to use numbers?");
+                console.log(selectNumChars);
+
+                var selectLowChars = confirm("Would you like to use lower case characters?");
+                console.log(selectLowChars);
+
+                var selectUpChars = confirm("Would you like to use upper case characters?");
+                console.log(selectUpChars);
+
+                var selectSpecChars = confirm("Would you like to use special characters?")
+                console.log(selectSpecChars);
+                
+
+                if (selectNumChars === true || selectLowChars === true || selectUpChars === true || selectSpecChars === true) {
+                    selectInvalid = false;
             
-           var selectNumChars = confirm("Would you like to use numbers?");
-            console.log(selectNumChars);
-
-            var selectLowChars = confirm("Would you like to use lower case characters?");
-            console.log(selectLowChars);
-
-             var selectUpChars = confirm("Would you like to use upper case characters?");
-            console.log(selectUpChars);
-
-            var selectSpecChars = confirm("Would you like to use special characters?")
-            console.log(selectSpecChars);
-            
+                }
+                else {
+                    alert("You must select one!");
+                }
             }
             
-    
-            if ( selectNumChars == false){
-                numberChars = "";
-            }
-            if ( selectLowChars == false){
-                lowerChars = "";
-            }
-            if (selectUpChars == false){
-                upperChars = "";
-            }
-            if (selectSpecChars == false){
-                specialChars = "";
+                if (selectNumChars == false) {
+                    numberChars = "";
+                }
+                if (selectLowChars == false) {
+                    lowerChars = "";
+                }
+                if (selectUpChars == false) {
+                    upperChars = "";
+                }
+                if (selectSpecChars == false) {
+                    specialChars = "";
+                }
+            
+
+            var fullArray = numberChars.concat(upperChars, lowerChars, specialChars);
+            console.log(fullArray);
+
+            
+            for (var i = 0; i < selectChars; i++) {
+                random += fullArray.charAt(Math.floor(Math.random() * fullArray.length));
+            
             }
 
-        var fullArray = numberChars.concat(upperChars,lowerChars,specialChars);
-
-        for (var i = 0; i < selectChars; i++) {
-            var rand = fullArray[Math.floor(Math.random() * fullArray.length)];
-        console.log(rand);
-        }
+            console.log(random);
             }
-        // var password = rand.join('')+'.';
-        // console.log(password);
+            
+
 
 
     </script>
