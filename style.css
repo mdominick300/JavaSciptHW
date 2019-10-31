@@ -5,14 +5,17 @@ body{
 h1{
     text-align: center;
 }
-
+.p{
+    position: relative;
+    float: left;
+}
 .whitebox {
     position: relative;
     background:white;
     float: left;
     clear: both;  
     padding: 40px;
-    height:auto;
+    height: auto;
     margin: 40px 0 40px 0;
     border-color: #777777;
     width: 100%;

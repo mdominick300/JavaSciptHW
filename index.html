@@ -25,12 +25,13 @@
     <!-- holds white box -->
     <div class="row">
         <div class="col-md-1">
+            <p id="demo"></p>
         </div>
         <div class="col-md-10 whitebox">
             <h2>Generate a Password</h2>
             <span class="line"></span>
-            <Input class="output" placeholder="Your Secure Password" type="text">
-            </Input>
+            <input class="output" value="Your Secure Password" id="myText" type="text">
+        </Input>
             <span class="line2"></span>
             <div class="row justify-content-between">
                 <span class="col-xs-4">
@@ -111,7 +112,7 @@
             }
 
             console.log(random);
-            alert("Your random password is " + random);
+            document.getElementById("myText").value = random; 
 
         numberChars = "0123456789";
         upperChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
