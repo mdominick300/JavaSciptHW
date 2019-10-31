@@ -37,7 +37,7 @@
                     <button onclick="generatePassword()" id="bgnBtn" class="redbutton ">Generate Password</button>
                 </span>
                 <span class="col-xs-4">
-                    <button onclick="myFunction()" class="greybutton"> Copy to Clipboard</button>
+                    <button onclick="textToClipboard()" class="greybutton"> Copy to Clipboard</button>
                 </span>
             </div>
         </div>
@@ -47,13 +47,13 @@
     <script>
 
         var numberChars = "0123456789";
-        var upperChars = "Abcdefghijklmnopqrstuvwxyz";
+        var upperChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         var lowerChars = "abcdefghijklmnopqrstuvwxyz";
         var specialChars = "!@#$%^&*[]?><";
         var random = "";
-        var selectNumChars ;
+        var selectNumChars;
 
-        var selectChars = 0 ;
+        var selectChars = 0;
 
         function generatePassword() {
             while (selectChars < 8 || selectChars > 128) {
@@ -76,43 +76,60 @@
 
                 var selectSpecChars = confirm("Would you like to use special characters?")
                 console.log(selectSpecChars);
-                
+
 
                 if (selectNumChars === true || selectLowChars === true || selectUpChars === true || selectSpecChars === true) {
                     selectInvalid = false;
-            
+
                 }
                 else {
                     alert("You must select one!");
                 }
             }
-            
-                if (selectNumChars == false) {
-                    numberChars = "";
-                }
-                if (selectLowChars == false) {
-                    lowerChars = "";
-                }
-                if (selectUpChars == false) {
-                    upperChars = "";
-                }
-                if (selectSpecChars == false) {
-                    specialChars = "";
-                }
-            
+
+            if (selectNumChars == false) {
+                numberChars = "";
+            }
+            if (selectLowChars == false) {
+                lowerChars = "";
+            }
+            if (selectUpChars == false) {
+                upperChars = "";
+            }
+            if (selectSpecChars == false) {
+                specialChars = "";
+            }
+
 
             var fullArray = numberChars.concat(upperChars, lowerChars, specialChars);
             console.log(fullArray);
 
-            
+
             for (var i = 0; i < selectChars; i++) {
                 random += fullArray.charAt(Math.floor(Math.random() * fullArray.length));
-            
+
             }
 
             console.log(random);
-            }
-            
+            alert("Your random password is " + random);
+
+        numberChars = "0123456789";
+        upperChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        lowerChars = "abcdefghijklmnopqrstuvwxyz";
+        specialChars = "!@#$%^&*[]?><";
+        random = "";
+        selectChars= 0;
+        }
+
+
+        // function textToClipboard(text) {
+        //     var dummy = document.createElement("textarea");
+        //     document.body.appendChild(dummy);
+        //     dummy.value = text;
+        //     dummy.select();
+        //     document.execCommand("copy");
+        //     document.body.removeChild(dummy);
+        // }
 
 
 
