@@ -14,6 +14,13 @@ Page will generate a password based on inputs user adds during use.
 <img src="Screen Shot 2019-11-02 at 9.26.25 AM.png" width=400px>
 <img src="Screen Shot 2019-11-02 at 9.26.35 AM.png" width=400px>
 
+# Use
+User can select "Generate password" button to start the program.
+<br>
+Screen prompts to select 8 to 128 characters.
+<br>
+Screen then prompts which characters to be included in password. These include: numbers, lower case, upper case and special characters. 
+
 
 # License
 
