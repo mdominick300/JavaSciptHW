@@ -4,7 +4,9 @@ Page will generate a password based on inputs user adds during use.
 
 # Code
 -HTML
+<br>
 -CSS
+<br>
 -Bootstrap
 
 # ScreenShots
