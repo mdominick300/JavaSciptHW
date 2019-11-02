@@ -1,6 +1,6 @@
 # Generate Password
 
-Page will generate a password based on inputs user adds during use.
+Page will generate a password based on inputs user selects.
 
 # Code
 -HTML
@@ -20,6 +20,10 @@ User can select "Generate password" button to start the program.
 Screen prompts to select 8 to 128 characters.
 <br>
 Screen then prompts which characters to be included in password. These include: numbers, lower case, upper case and special characters. 
+<br>
+Generates password and prints it on the webpage.
+<br>
+User can click clipboard button to copy the password.
 
 
 # License
