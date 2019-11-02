@@ -31,14 +31,14 @@
             <h2>Generate a Password</h2>
             <span class="line"></span>
             <input class="output" value="Your Secure Password" id="myText" type="text">
-        </Input>
+            </Input>
             <span class="line2"></span>
             <div class="row justify-content-between">
                 <span class="col-xs-4">
                     <button onclick="generatePassword()" id="bgnBtn" class="redbutton ">Generate Password</button>
                 </span>
                 <span class="col-xs-4">
-                    <button onclick="textToClipboard()" class="greybutton"> Copy to Clipboard</button>
+                    <button onclick="myFunction()" id="bgnBtn" class="greybutton"> Copy to Clipboard</button>
                 </span>
             </div>
         </div>
@@ -46,17 +46,17 @@
         </div>
     </div>
     <script>
-
+        // arrays with all possible characters to use
         var numberChars = "0123456789";
         var upperChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         var lowerChars = "abcdefghijklmnopqrstuvwxyz";
         var specialChars = "!@#$%^&*[]?><";
         var random = "";
         var selectNumChars;
-
         var selectChars = 0;
-
+// function to find random password
         function generatePassword() {
+            // loops question to ensure the character length is acceptable
             while (selectChars < 8 || selectChars > 128) {
                 selectChars = prompt("How many characters do you want your Password to be?\nMust select 8-128");
 
@@ -64,7 +64,7 @@
             }
 
             var selectInvalid = true;
-
+// loops which characters they select ensuring they select at least one
             while ((selectChars > 7 && selectChars < 129) && selectInvalid === true) {
                 var selectNumChars = confirm("Would you like to use numbers?");
                 console.log(selectNumChars);
@@ -87,7 +87,7 @@
                     alert("You must select one!");
                 }
             }
-
+// takes out any characters that are not wanted by user by emptying array
             if (selectNumChars == false) {
                 numberChars = "";
             }
@@ -101,36 +101,37 @@
                 specialChars = "";
             }
 
-
+// combines arrays to use for password
             var fullArray = numberChars.concat(upperChars, lowerChars, specialChars);
             console.log(fullArray);
 
-
+// loops to pull random characters from the array based on the amount of characters user selects
             for (var i = 0; i < selectChars; i++) {
                 random += fullArray.charAt(Math.floor(Math.random() * fullArray.length));
 
             }
-
+// resets the password generator so it works over and over
             console.log(random);
-            document.getElementById("myText").value = random; 
+            document.getElementById("myText").value = random;
 
-        numberChars = "0123456789";
-        upperChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-        lowerChars = "abcdefghijklmnopqrstuvwxyz";
-        specialChars = "!@#$%^&*[]?><";
-        random = "";
-        selectChars= 0;
+            numberChars = "0123456789";
+            upperChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            lowerChars = "abcdefghijklmnopqrstuvwxyz";
+            specialChars = "!@#$%^&*[]?><";
+            random = "";
+            selectChars = 0;
         }
+        // copies password in text box to clipboard
+        function myFunction() {
+            var copyText = document.getElementById("myText");
+            copyText.select();
+            document.execCommand("copy");
+            alert("Copied the text: " + copyText.value);
+        }
+        
+        
 
-
-        // function textToClipboard(text) {
-        //     var dummy = document.createElement("textarea");
-        //     document.body.appendChild(dummy);
-        //     dummy.value = text;
-        //     dummy.select();
-        //     document.execCommand("copy");
-        //     document.body.removeChild(dummy);
-        // }
+       
 
 
 
